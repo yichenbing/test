@@ -9,16 +9,22 @@
  * in accordance with the terms of the contract agreement
  * you entered into with Nascent Co. Ltd
  */
-package com.ycbbcy.test.a;
+package com.ycbbcy.test.web;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author zsf
- * @history 1.0.0 2019/4/23 13:38 created by zsf
- * @since 2019/4/23 13:38
+ * @history 1.0.0 2019/4/23 15:34 created by zsf
+ * @since 2019/4/23 15:34
  */
-public class A {
+@RestController
+@RequestMapping
+public class TestController {
 
-    public static void main(String[] args) {
-        String a = "aaaaaaaaa";
+    @RequestMapping("test")
+    public String test() {
+        return "Hello World";
     }
 }
