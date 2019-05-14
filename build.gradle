@@ -1,6 +1,14 @@
 plugins {
     id 'org.springframework.boot' version '2.1.4.RELEASE'
     id 'java'
+    id 'war'
+    id 'application'
+}
+
+mainClassName = 'com.ycbbcy.test.TestApplication'
+
+bootWar {
+    excludeDevtools = false
 }
 
 configurations {
@@ -18,7 +26,12 @@ dependencies {
             'de.codecentric:spring-boot-admin-starter-client'
     )
     compile(
-            project(':web')
+            project(':web'),
+            'com.github.ulisesbocchio:jasypt-spring-boot-starter:2.1.1'
+
+    )
+    providedRuntime(
+            'org.springframework.boot:spring-boot-starter-tomcat'
     )
 }
 
@@ -52,7 +65,8 @@ allprojects {
         compile(
                 'org.springframework.boot:spring-boot-starter-aop',
                 'org.springframework.boot:spring-boot-starter-web',
-                group: 'com.alibaba', name: 'fastjson', version: '1.2.57'
+                'com.alibaba:fastjson:1.2.57',
+                'org.apache.commons:commons-lang3:3.9'
         )
         testCompile(
                 'org.springframework.boot:spring-boot-starter-test'

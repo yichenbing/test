@@ -1,0 +1,2 @@
+# 注入Spring ApplicationListener的方式之一
+#org.springframework.context.ApplicationListener=com.ycbbcy.test.service.CustomerApplicationListener
